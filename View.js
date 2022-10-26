@@ -121,7 +121,7 @@ export class View{
               }
 
           })
-          const smallDevice = window.matchMedia("(-webkit-max-width:480px)");
+          const smallDevice = window.matchMedia("(max-width:480px)");
 
           const  handleDeviceChange = (e) =>{
               if (!(e.matches)){
