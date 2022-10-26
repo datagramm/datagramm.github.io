@@ -121,7 +121,7 @@ export class View{
               }
 
           })
-          const smallDevice = window.matchMedia("(max-width:480px)");
+          const smallDevice = window.matchMedia("(-webkit-max-width:480px)");
 
           const  handleDeviceChange = (e) =>{
               if (!(e.matches)){
@@ -543,7 +543,7 @@ export class View{
                 else {
                     this.app.style.transition = '1s'
                     this.app.style.width = '90%';
-                    this.app.style.gridTemplateColumns = 'repeat( 2, minmax(100px, 1fr))';
+
                 }
             }
 
