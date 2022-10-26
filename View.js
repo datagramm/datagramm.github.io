@@ -153,6 +153,7 @@ export class View{
               else {
                   this.filterPanel.style.right = '-45%';
                   this.app.style.width = '90%';
+                  this.app.style.gridTemplateColumns = 'repeat( 2, minmax(100px, 1fr))';
               }
           }
           smallDevice.addListener(handleDeviceChange);
@@ -186,6 +187,7 @@ export class View{
                 else {
                     this.filterPanel.style.right = '0';
                     this.app.style.width = '90%';
+                    this.app.style.gridTemplateColumns = 'repeat( 2, minmax(100px, 1fr))';
                 }
             }
             smallDevice.addListener(handleDeviceChange);
@@ -543,6 +545,7 @@ export class View{
                 else {
                     this.app.style.transition = '1s'
                     this.app.style.width = '90%';
+                    this.app.style.gridTemplateColumns = 'repeat( 2, minmax(100px, 1fr))';
 
                 }
             }
