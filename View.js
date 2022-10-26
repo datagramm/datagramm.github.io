@@ -525,7 +525,11 @@ export class View{
             })
              const smallDevice = window.matchMedia("(max-width:480px");
 
-                    if (this.count >= 4){
+               
+
+            const handleDeviceChange = (e) => {
+                if (!(e.matches)){
+                         if (this.count >= 4){
                         this.app.style.transition = '1s'
                         this.app.style.width = '90%';
                         this.app.style.gridTemplateColumns = 'repeat( auto-fill, minmax(250px, 1fr))';
@@ -535,9 +539,8 @@ export class View{
                         this.app.style.width = '70%';
                         this.app.style.gridTemplateColumns = 'repeat( auto-fill, minmax(250px, 1fr))';
                     }
-
-            const handleDeviceChange = (e) => {
-                if (e.matches){
+                }
+                else {
                     this.app.style.transition = '1s'
                     this.app.style.width = '90%';
                     this.app.style.gridTemplateColumns = 'repeat( 2, minmax(100px, 1fr))';
