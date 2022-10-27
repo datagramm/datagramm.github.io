@@ -293,6 +293,7 @@
         padding: 1em;
         display: grid;
         grid-gap: 1em;
+        -webkit-grid-gap: 1em;
         width: 90%;
 
         grid-template-columns: repeat( 2, minmax(100px, 1fr));
@@ -308,6 +309,7 @@
         height: 250px;
 
         border-radius: 10px;
+         -webkit-border-radius: 10px;
     }
 
     .search {
