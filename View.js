@@ -726,7 +726,7 @@ export class View{
                 slide: function (event, ui) {
                     $("#amount").val("$" + ui.values[0] + " - $" + ui.values[1]);
                 }
-            });
+            }).draggable();
 
             $("#amount").val("$" + $("#slider").slider("values", 0) +
                 " - $" + $("#slider").slider("values", 1));
