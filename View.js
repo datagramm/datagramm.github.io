@@ -4,7 +4,7 @@ export class View{
         this.app = this.getElement('#root');
         this.searchPanel = this.createElement('div', 'search');
         this.inputSearch = this.createElement('input','search-input');
-        this.filterPanel = this.getElement('.filter-panel');
+        this.filterPanel = this.getElement('.filter-panel').draggable();
         this.mobile = 'mobile';
         this.computer = 'computer';
         this.slider = this.createElement('div', 'slider');
