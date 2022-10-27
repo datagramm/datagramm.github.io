@@ -308,8 +308,8 @@
         flex-direction: column;
         height: 250px;
 
-        border-radius: 10px;
-         -webkit-border-radius: 10px;
+        border-radius: 10%;
+         -webkit-border-radius: 10%;
     }
 
     .search {
