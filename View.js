@@ -153,8 +153,24 @@ export class View{
 
     hoverFilterEffect(){
         const smallDevice = window.matchMedia("(max-width:480px)");
+        const onClickModal =  (event) =>{
+            if (event.target.closest(".filter-panel ") ||
+                event.target.matches('.modal-filter > *')){
+                this.filterPanel.style.right = '0';
+                this.app.style.width = '90%';
+
+            }
+            else {
+
+                this.filterPanel.style.right = '-45%';
+                this.app.style.width = '90%';
+
+            }
+        }
         const  handleDeviceChange = (e) =>{
             if (!(e.matches)){
+                 window.removeEventListener('scroll', scroll);
+                window.removeEventListener("click", onClickModal)
         this.filterPanel.addEventListener('mouseover', () =>{
             this.count = 0;
             let cardNodeList = document.querySelectorAll(".card");
@@ -176,30 +192,17 @@ export class View{
 
         }
              else {
-                 window.addEventListener('click', event => {
-                     if (event.target.closest(".filter-panel ") ||
-                         event.target.matches('.modal-filter > *')){
-                         this.filterPanel.style.right = '0';
-                         this.app.style.width = '90%';
-                         this.app.style.gridTemplateColumns = 'repeat( 2, minmax(100px, 1fr))';
-                     }
-                     else {
-
-                         this.filterPanel.style.right = '-45%';
-                         this.app.style.width = '90%';
-                         this.app.style.gridTemplateColumns = 'repeat( 2, minmax(100px, 1fr))';
-                     }
-                 })
-                window.addEventListener('scroll', (event)=>{
+                 window.addEventListener('click', onClickModal)
+                window.addEventListener('scroll', scroll = (event)=>{
                     if (event.target){
                         this.filterPanel.style.right = '-45%';
                         this.app.style.width = '90%';
-                        this.app.style.gridTemplateColumns = 'repeat( 2, minmax(100px, 1fr))';
+                       
                     }
                     else {
                         this.filterPanel.style.right = '0';
                         this.app.style.width = '90%';
-                        this.app.style.gridTemplateColumns = 'repeat( 2, minmax(100px, 1fr))';
+                      
                     }
                 })
 
@@ -557,7 +560,7 @@ export class View{
                 else {
                     this.app.style.transition = '1s'
                     this.app.style.width = '90%';
-                    this.app.style.gridTemplateColumns = 'repeat( 2, minmax(100px, 1fr))';
+                    
 
                 }
             }
